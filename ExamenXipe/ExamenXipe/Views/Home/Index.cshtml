@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Osvaldo Monzon - Agent 007";
+}
+
+<!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4" id="contactHead">Contact us</h2>
+    <!--Section description-->
+
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-12 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" onsubmit="return indexFunction.postAPI()">
+
+                <!--Grid row-->
+                <div class="row" id="formContainer">
+
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+@section Scripts{
+    <script src="~/js/Security/_Security.js"></script>
+    <script src="~/js/Views/Index.js"></script>
+    <script src="~/js/Shared/_LoadData.js"></script>
+    <script>
+    var objForm = @Html.Raw((ViewBag.Response));
+    </script>
+}
