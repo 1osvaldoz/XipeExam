@@ -1,6 +1,8 @@
 ﻿var mail = {};
 var indexFunction = {
-     postAPI : function () {
+    postAPI: function () {
+        mostrarCargando();
+        
         $.ajax({
             url: urlPost,
             crossDomain: true,
@@ -13,15 +15,27 @@ var indexFunction = {
 
                 //alert("Bienvenido " + respuesta.user.name)
                 alert("Message send successfully!")
+                ocultarCargando();
 
 
             },
             error: function (err, x, x2) {
-                alert(err.responseText)
-                return false;
 
-            }
-        });
+                if (err.status == 202) {
+
+                    alert("Message send successfully!")
+
+                }
+                else {
+                    alert(err.responseText)
+
+                }
+                    ocultarCargando()
+                    return false;
+
+                }
+            });
+         
         return false;
     }
 }

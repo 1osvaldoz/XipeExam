@@ -67,3 +67,27 @@
         }
     });
 }
+
+var loading = [];
+var histPage = [];
+function mostrarCargando() {
+    $("#loader").show();
+    loading.push(1);
+
+}
+
+function ocultarCargando() {
+    loading.pop();
+    if (loading.length == 0)
+        $("#loader").hide();
+}
+function mostrarCargandoSlow() {
+    $("#loader").show("slow");
+    loading.push(1);
+}
+
+function ocultarCargandoSlow() {
+    loading.pop();
+    if (loading.length == 0)
+        $("#loader").hide("slow");
+}
